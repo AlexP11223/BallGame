@@ -4,6 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 6;
 
+    public AudioSource hitSound;
+
     private Rigidbody _rb;
 
     void Start()
@@ -19,5 +21,15 @@ public class PlayerController : MonoBehaviour
         var movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         _rb.AddForce(movement * speed);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print("Hit relativeVelocity: " + collision.relativeVelocity.magnitude);
+
+        if (collision.relativeVelocity.magnitude > 2)
+        {
+            hitSound.Play();
+        }
     }
 }
