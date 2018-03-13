@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 504051881}
+  Player: {fileID: 358236333}
+  PlayerSizeIncrement: 0.04
 --- !u!4 &169970521
 Transform:
   m_ObjectHideFlags: 0
