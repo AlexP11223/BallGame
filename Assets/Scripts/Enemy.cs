@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private Animator _anim;
     private bool _isDead = false;
@@ -39,6 +39,5 @@ public class EnemyController : MonoBehaviour
         }
 
         IsDead = true;
-
     }
 }
