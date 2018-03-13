@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
     private Animator _anim;
     private bool _isDead = false;
 
+    private GameManager _gameManager;
+
     public AudioSource SplatSound;
     public AudioSource SquelchSound;
 
@@ -13,6 +15,11 @@ public class Enemy : MonoBehaviour
         get { return _isDead; }
         private set
         {
+            if (_isDead == value)
+            {
+                return;
+            }
+
             _isDead = value;
             _anim.SetBool(nameof(IsDead), IsDead);
         }
@@ -20,6 +27,8 @@ public class Enemy : MonoBehaviour
     
     void Start ()
     {
+        _gameManager = FindObjectOfType<GameManager>();
+
         _anim = GetComponentInParent<Animator>();
     }
 	
@@ -35,6 +44,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            _gameManager.HandleKill();
+
             SplatSound.Play();
         }
 

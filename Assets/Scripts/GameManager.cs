@@ -1,11 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	void Start()
+    private int _score = 0;
+
+    public Text ScoreText;
+
+	void Update()
 	{
-		
+	    ScoreText.text = $"Score: {_score}";
 	}
+
+    public void HandleKill()
+    {
+        _score++;
+    }
 }
