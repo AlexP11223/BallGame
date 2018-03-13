@@ -8,8 +8,15 @@ public class EnemyManager : MonoBehaviour
     
     public SpawnArea[] SpawnAreas;
 
+    public int InitialEnemiesCount = 3;
+
     void Start()
     {
+        for (int i = 0; i < InitialEnemiesCount; i++)
+        {
+            Spawn();
+        }
+
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
         InvokeRepeating(nameof(Spawn), SpawnDelay, SpawnDelay);
     }
