@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        print("Hit relativeVelocity: " + collision.relativeVelocity.magnitude);
+        print($"Hit {collision.collider.name}, relativeVelocity: {collision.relativeVelocity.magnitude}");
 
         if (collision.relativeVelocity.magnitude > 2)
         {
