@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Text TimeText;
     public float TimeLimit = 60f;
 
+    public Animator UiAnim;
+
     void Start()
     {
         StartCoroutine(GameOverTimer(TimeLimit));
@@ -60,5 +62,6 @@ public class GameManager : MonoBehaviour
         // freeze player
         Player.GetComponent<Rigidbody>().isKinematic = true;
 
+        UiAnim.SetTrigger("GameOver");
     }
 }
