@@ -12,3 +12,4 @@ The [Releases](https://github.com/AlexP11223/BallGame/releases) page contains bu
 
 There is also a WebGL version: https://alexp11223.github.io/BallGame/
 
+More detailed overview in Russian: https://www.programmersforum.rocks/t/ballgame-prostaya-igra-na-unity/339
